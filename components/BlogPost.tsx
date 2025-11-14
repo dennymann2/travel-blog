@@ -124,12 +124,18 @@ export function BlogPost({ post, onBack }: BlogPostProps) {
                 <div key={index} className="overflow-hidden rounded-xl border border-slate-700/30 shadow-lg bg-black">
                   <video
                     controls
-                    preload="metadata"
+                    controlsList="nodownload"
+                    preload="none"
+                    width="100%"
+                    height="100%"
                     className="w-full h-64 bg-black"
-                    style={{ display: 'block' }}
+                    style={{ display: 'block', maxWidth: '100%', height: 'auto' }}
                   >
+                    <source src={video} type="video/mp4; codecs=avc1" />
                     <source src={video} type="video/mp4" />
-                    <p className="text-slate-300 p-4">Your browser does not support the video tag.</p>
+                    <p className="text-slate-300 p-4">
+                      Your browser does not support HTML5 videos. <a href={video} className="text-amber-400 hover:text-amber-300">Download the video instead</a>
+                    </p>
                   </video>
                 </div>
               ))}
