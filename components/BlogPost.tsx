@@ -20,6 +20,22 @@ export function BlogPost({ post, onBack }: BlogPostProps) {
         Zurück zur Übersicht
       </Button>
 
+      {/* Plane Image - Only for Shanghai - ABOVE HEADER */}
+      {post.id === "shanghai-skyline" && (
+        <div className="my-12 text-center space-y-4">
+          <div className="inline-block">
+            <ImageWithFallback
+              src="/images/plane/plane.jpg"
+              alt="Unsere Reise beginnt hier"
+              className="h-96 w-96 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+          <p className="text-slate-300 font-light italic text-lg">
+            Unsere Reise beginnt hier
+          </p>
+        </div>
+      )}
+
       {/* Header Section */}
       <div className="space-y-4 border-b border-slate-700/30 pb-8">
         <div className="text-sm text-slate-400 font-medium uppercase tracking-widest">{post.subtitle}</div>

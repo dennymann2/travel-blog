@@ -97,18 +97,6 @@ export default function App() {
                   <p className="text-sm text-slate-500 font-light">
                     Alle Geschichten sind echt – unsere Sehnsucht nach Abenteuer auch.
                   </p>
-
-                  {/* Plane Image Section */}
-                  <div className="mt-12 pt-12 border-t border-slate-700/50 space-y-4">
-                    <img 
-                      src="/images/plane/plane.jpg" 
-                      alt="Plane" 
-                      className="h-24 w-24 mx-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
-                    />
-                    <p className="text-slate-300 font-light italic text-base">
-                      Die reise hört niemals auf
-                    </p>
-                  </div>
                 </div>
               </div>
             </footer>
