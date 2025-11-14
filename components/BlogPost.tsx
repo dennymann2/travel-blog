@@ -121,13 +121,15 @@ export function BlogPost({ post, onBack }: BlogPostProps) {
             <h3 className="text-xl font-bold text-white uppercase tracking-widest">🎬 Videos</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {post.videos.map((video, index) => (
-                <div key={index} className="overflow-hidden rounded-xl border border-slate-700/30 shadow-lg">
+                <div key={index} className="overflow-hidden rounded-xl border border-slate-700/30 shadow-lg bg-black">
                   <video
                     controls
-                    className="w-full h-64 object-cover bg-black"
+                    preload="metadata"
+                    className="w-full h-64 bg-black"
+                    style={{ display: 'block' }}
                   >
                     <source src={video} type="video/mp4" />
-                    Your browser does not support the video tag.
+                    <p className="text-slate-300 p-4">Your browser does not support the video tag.</p>
                   </video>
                 </div>
               ))}
