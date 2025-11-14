@@ -131,8 +131,8 @@ export function BlogPost({ post, onBack }: BlogPostProps) {
                     className="w-full h-64 bg-black"
                     style={{ display: 'block', maxWidth: '100%', height: 'auto' }}
                   >
-                    <source src={video} type="video/mp4; codecs=avc1" />
                     <source src={video} type="video/mp4" />
+                    <source src={video.replace('.mp4', '-h264.mp4')} type="video/mp4; codecs=avc1" />
                     <p className="text-slate-300 p-4">
                       Your browser does not support HTML5 videos. <a href={video} className="text-amber-400 hover:text-amber-300">Download the video instead</a>
                     </p>
