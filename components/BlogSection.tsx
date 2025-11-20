@@ -8,7 +8,7 @@ interface BlogSectionProps {
 
 export function BlogSection({ posts, onPostClick }: BlogSectionProps) {
   return (
-    <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-16 sm:py-24 md:py-32">
+    <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-16 sm:py-24 md:py-32 overflow-hidden">
       {/* Premium animated background - Mobile optimized */}
       <div className="absolute top-0 left-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-amber-500/10 blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse" />
       <div className="absolute bottom-0 right-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-orange-500/10 blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse" style={{ animationDelay: '1s' }} />

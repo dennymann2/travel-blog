@@ -7,7 +7,7 @@ interface MapSectionProps {
 
 export function MapSection({ onLocationClick }: MapSectionProps) {
   return (
-    <section className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 py-16 sm:py-24 md:py-32">
+    <section className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 py-16 sm:py-24 md:py-32 overflow-hidden">
       {/* Premium background effects - Mobile optimized */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 right-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-blue-500/10 blur-3xl translate-x-1/3 animate-pulse" />

@@ -18,7 +18,7 @@ export function Hero({ onExplore }: HeroProps) {
   }, []);
 
   return (
-    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
       {/* Premium moody atmosphere */}
       <div className="absolute inset-0">
         {/* Base gradient */}
