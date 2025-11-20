@@ -27,10 +27,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-900">
       {/* Premium Header - only shown when on post detail */}
       {selectedPostId && (
-        <header className="sticky top-0 z-40 border-b border-slate-700/50 bg-slate-950/95 backdrop-blur-lg">
+        <header className="sticky top-0 z-40 border-b border-slate-700/50 bg-slate-900/95 backdrop-blur-lg">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <button
               onClick={() => setSelectedPostId(null)}
@@ -51,7 +51,7 @@ export default function App() {
       {/* Main Content */}
       <main>
         {selectedPost ? (
-          <div className="bg-gradient-to-b from-slate-950 to-slate-900 min-h-screen">
+          <div className="bg-gradient-to-b from-slate-900 to-slate-800 min-h-screen">
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
               <BlogPost 
                 post={selectedPost} 
@@ -79,7 +79,7 @@ export default function App() {
             <MapSection onLocationClick={handlePostClick} />
 
             {/* Premium Footer */}
-            <footer className="relative border-t border-slate-700/50 bg-gradient-to-b from-slate-900 to-slate-950 text-slate-400 overflow-hidden">
+            <footer className="relative border-t border-slate-700/50 bg-gradient-to-b from-slate-800 to-slate-900 text-slate-400 overflow-hidden">
               {/* Footer background effects */}
               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:80px_80px] opacity-10 pointer-events-none" />
               

@@ -113,7 +113,7 @@ export const blogPosts: BlogPost[] = [
     quote: "Antarktis ist der Beweis, dass das Universum größer ist als wir.",
     reflection: "Ich bin eine andere Person, als ich in Shanghai angefangen habe. Die Welt hat mich geformt, geschliffen, neu zusammengesetzt. Antarktis war das letzte Kapitel – das Kapitel, in dem ich verstanden habe, dass Fernweh nicht nur ein Sehnen nach Ferne ist. Es ist ein Sehnen nach Wahrheit.",
     tags: ["Antarktis", "Expedition", "Natur", "Abenteuer", "Ende"],
-    gallery: [],
+    gallery: ["/images/antarctis/antarctis.png", "/images/antarctis/antarctis2.png", "/images/antarctis/antarctis3.png", "/images/antarctis/antarctis4.png", "/images/antarctis/antarctis5.png"],
     videos: ["/videos/antarctis/antarctis.mp4"]
   }
 ];
