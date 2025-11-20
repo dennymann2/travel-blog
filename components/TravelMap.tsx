@@ -107,29 +107,29 @@ export function TravelMap({ onLocationClick }: TravelMapProps) {
   const sortedPosts = [...blogPosts].sort((a, b) => a.day - b.day);
 
   return (
-    <div className="relative w-full overflow-hidden rounded-lg border border-slate-700/50 shadow-sm bg-slate-800/50">
+    <div className="relative w-full h-full flex flex-col overflow-hidden rounded-lg border border-slate-700/50 shadow-sm bg-slate-800/50">
       <div
         ref={mapRef}
-        className="h-full w-full"
-        style={{ minHeight: "500px" }}
+        className="flex-grow w-full"
+        style={{ minHeight: "400px" }}
       />
 
-      {/* Legend below map - Dark themed and larger */}
-      <div className="border-t border-slate-700/50 bg-slate-900/80 backdrop-blur-sm p-6 max-h-96 overflow-y-auto">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max">
+      {/* Legend below map - Dark themed and larger - Mobile optimized */}
+      <div className="border-t border-slate-700/50 bg-slate-900/80 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto flex-shrink-0">
+        <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max">
           {sortedPosts.map((post, index) => (
             <button
               key={post.id}
               onClick={() => onLocationClick?.(post.id)}
-              className="flex items-start gap-4 rounded-lg p-4 text-left transition-all duration-300 hover:bg-slate-800/60 border border-slate-700/30 hover:border-amber-400/50 hover:shadow-lg hover:shadow-amber-500/20 flex-shrink-0"
+              className="flex items-start gap-3 sm:gap-4 rounded-lg p-3 sm:p-4 text-left transition-all duration-300 hover:bg-slate-800/60 border border-slate-700/30 hover:border-amber-400/50 hover:shadow-lg hover:shadow-amber-500/20 flex-shrink-0"
             >
-              <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2 border-amber-500 bg-amber-500/20 text-sm font-bold text-amber-300">
+              <div className="flex h-7 sm:h-8 w-7 sm:w-8 flex-shrink-0 items-center justify-center rounded-full border-2 border-amber-500 bg-amber-500/20 text-xs sm:text-sm font-bold text-amber-300">
                 {index + 1}
               </div>
               <div className="min-w-0 flex-1">
-                <div className="truncate text-base font-semibold text-white">{post.title}</div>
-                <div className="flex items-center gap-1 text-sm text-slate-400 mt-1">
-                  <MapPin className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                <div className="truncate text-sm sm:text-base font-semibold text-white">{post.title}</div>
+                <div className="flex items-center gap-1 text-xs sm:text-sm text-slate-400 mt-0.5 sm:mt-1 flex-wrap">
+                  <MapPin className="h-3 sm:h-4 w-3 sm:w-4 text-amber-400 flex-shrink-0" />
                   <span className="truncate">{post.location.split(",")[0]}</span>
                   <span className="flex-shrink-0">• Tag {post.day}</span>
                 </div>

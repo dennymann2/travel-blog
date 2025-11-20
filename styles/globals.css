@@ -4,6 +4,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance: Hardware acceleration and font smoothing */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -310,4 +334,54 @@ a {
 
 button {
   transition: all 0.2s ease;
+}
+
+/* Responsive text sizing optimization */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Touch targets optimization for mobile */
+@media (max-width: 640px) {
+  button,
+  a,
+  [role='button'] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Image optimization for performance */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optimize animations for mobile devices */
+@media (max-width: 768px) {
+  * {
+    animation-duration: 0.3s !important;
+  }
+}
+
+/* Prevent layout shift on mobile */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 60px;
+  }
 }
