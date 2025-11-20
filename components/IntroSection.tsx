@@ -22,7 +22,7 @@ export function IntroSection() {
           </h2>
 
           <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-3xl font-light">
-            Wir sind Lena und Max. Vor einigen Monaten haben wir unsere Jobs gekündigt, 
+            Wir sind Philipp und Denny. Vor einigen Monaten haben wir unsere Jobs gekündigt, 
             unsere Wohnungen aufgelöst, und sind mit Rucksäcken in die Welt hinausgezogen. 
             Das war nicht geplant – es passierte einfach.
           </p>

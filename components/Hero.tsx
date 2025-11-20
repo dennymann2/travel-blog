@@ -65,7 +65,7 @@ export function Hero({ onExplore }: HeroProps) {
           {/* Refined description with elegant styling */}
           <div className="max-w-2xl mx-auto space-y-4">
             <p className="text-base md:text-lg text-gray-300 leading-relaxed font-light">
-              Lena und Max haben ihre Jobs gekündigt, um die Welt zu erkunden. 
+              Philipp und Denny haben ihre Jobs gekündigt, um die Welt zu erkunden. 
               Hier dokumentieren sie echte Momente – von glänzenden Metropolen bis zu goldenen Stränden.
             </p>
             <p className="text-sm text-gray-400 tracking-wider">

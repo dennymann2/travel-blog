@@ -35,7 +35,7 @@ export const blogPosts: BlogPost[] = [
     coordinates: [40.5, 116.6],
     content: [
       "Wir fangen früh an. Das Schlimmste an der Chinesischen Mauer ist nicht der Berg, sondern die Menschen. Zehntausende von Menschen, die alle zur gleichen Zeit vom gleichen Busbahnhof losfahren.",
-      "Aber Lena hat recherchiert, und wir fahren nicht zur Badaling-Sektion, wo 90% der Touristen hinrennen. Wir fahren nach Mutianyu, und das ist eine der besten Entscheidungen, die wir hätten treffen können.",
+      "Aber Philipp hat recherchiert, und wir fahren nicht zur Badaling-Sektion, wo 90% der Touristen hinrennen. Wir fahren nach Mutianyu, und das ist eine der besten Entscheidungen, die wir hätten treffen können.",
       "Die Seilbahn bringt uns hinauf auf etwa 600 Meter, und als wir aussteigen, verstehen wir, warum die Kaiser diese Linie hier bauten. Du kannst meilenweit sehen. Die Berge erstrecken sich endlos vor dir, bedeckt mit grünem Wald, unterbrochen nur durch die Schlangen der Mauer, die sich über Kämme und Täler zieht.",
       "Wir wandern für Stunden. Die Luft ist klar und kühl. Es gibt kaum andere Menschen. Nur wir, die Steine und eine 2.000 Jahre alte Mauer, die sich unter unseren Füßen erstreckt. An manchen Stellen ist sie gut erhalten, an anderen bröckelt sie weg.",
       "In einem der Wachtürme machen wir Pause und essen die Nüsse und Früchte, die wir mitgenommen haben. Eine Gruppe von Schulkindern rennt an uns vorbei, laut und lebendig. Sie schieben ihre Eltern ungeduldig vorwärts – die Mauer ist alte Geschichte, und sie haben Tiktoks zu drehen.",
@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
     coordinates: [-33.9, 151.2],
     content: [
       "Sydney ist wie das Hollywood des Südens – zu schön, um wahr zu sein, und doch ist es absolut echt. Das Opernhaus ist noch beeindruckender als auf allen Fotos, die Harbour Bridge ist ikonischer, und der Himmel ist so blau, dass man meint, es ist Photoshop.",
-      "Wir buchen eine Führung, bei der wir über die Brücke klettern können. 200 Meter über der Stadt, mit nichts außer einem Seil und einer dicken Schicht Angst zwischen uns und dem Wasser. Lena hat leichte Höhenangst, aber sie macht es trotzdem. Das ist das Motto unserer ganzen Reise, denke ich.",
+      "Wir buchen eine Führung, bei der wir über die Brücke klettern können. 200 Meter über der Stadt, mit nichts außer einem Seil und einer dicken Schicht Angst zwischen uns und dem Wasser. Philipp hat leichte Höhenangst, aber er macht es trotzdem. Das ist das Motto unserer ganzen Reise, denke ich.",
       "Bondi Beach ist genau wie in den Filmen – blonder Sand, perfekte Wellen, attraktive Menschen in Badeanzügen. Wir schwimmen und spielen Volleyball und fühlen uns zum ersten Mal wie normale Touristen. Es ist wunderbar und gleichzeitig seltsam.",
       "Nachts gehen wir zu einem Fish-and-Chips-Restaurant mit Blick auf die Harbour Bridge. Wir essen die besten Barramundi unseres Lebens, trinken kaltes Bier, und der Himmel stellt sich zum Finale hin auf. Die Lichter der Stadt spiegeln sich im Wasser. Eine Familie neben uns singt Happy Birthday für ihre Großmutter. Das Leben ist einfach schön.",
       "Auf dem Rückweg zu unserem Hostel laufen wir durch die Botanischen Gärten. Fledermäuse hängen kopfüber in den Bäumen, die Stadt funkelt hinter uns. Ein Hochzeitspaar posiert für Fotos, die Braut lacht.",
