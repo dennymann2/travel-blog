@@ -107,15 +107,17 @@ export function TravelMap({ onLocationClick }: TravelMapProps) {
   const sortedPosts = [...blogPosts].sort((a, b) => a.day - b.day);
 
   return (
-    <div className="relative w-full h-full flex flex-col overflow-hidden rounded-lg border border-slate-700/50 shadow-sm bg-slate-800/50">
-      <div
-        ref={mapRef}
-        className="flex-grow w-full"
-        style={{ minHeight: "400px" }}
-      />
+    <div className="relative w-full flex flex-col overflow-visible rounded-lg border border-slate-700/50 shadow-sm bg-slate-800/50">
+      {/* Map container - responsive height */}
+      <div className="w-full relative overflow-hidden flex-shrink-0" style={{ minHeight: "300px", height: "clamp(300px, 50vh, 600px)" }}>
+        <div
+          ref={mapRef}
+          className="w-full h-full"
+        />
+      </div>
 
-      {/* Legend below map - Dark themed and larger - Mobile optimized */}
-      <div className="border-t border-slate-700/50 bg-slate-900/80 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto flex-shrink-0">
+      {/* Legend below map - Dark themed and larger - Mobile optimized - Always visible */}
+      <div className="border-t border-slate-700/50 bg-slate-900/80 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto flex-shrink-0 max-h-96 sm:max-h-none">
         <div className="grid gap-2 sm:gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max">
           {sortedPosts.map((post, index) => (
             <button

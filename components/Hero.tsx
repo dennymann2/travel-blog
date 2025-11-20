@@ -18,7 +18,7 @@ export function Hero({ onExplore }: HeroProps) {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Premium moody atmosphere */}
       <div className="absolute inset-0">
         {/* Base gradient */}
@@ -38,7 +38,7 @@ export function Hero({ onExplore }: HeroProps) {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:40px_40px] sm:bg-[size:60px_60px] opacity-30 animate-pulse" style={{ animationDuration: '8s' }} />
 
       {/* Main content - premium overlay layout - mobile optimized */}
-      <div className="relative flex h-screen flex-col items-center justify-center px-4 sm:px-6 text-center z-10">
+      <div className="relative flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 py-16 sm:py-20 md:py-24 text-center z-10">
         <div className="mx-auto w-full max-w-5xl space-y-6 sm:space-y-8 md:space-y-12">
           {/* Premium subtitle with refined styling */}
           <div className="space-y-2 sm:space-y-4 animate-fade-in">

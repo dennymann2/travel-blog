@@ -42,8 +42,8 @@ export function MapSection({ onLocationClick }: MapSectionProps) {
         </div>
 
         {/* Map Container - Premium styling - Mobile optimized */}
-        <div className="group overflow-hidden rounded-xl sm:rounded-3xl border border-slate-700/50 shadow-lg sm:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 bg-slate-800/50 backdrop-blur-sm flex flex-col h-auto md:h-[calc(100vh-200px)]">
-          <div className="relative flex-grow w-full min-h-[400px] sm:min-h-[600px]">
+        <div className="group overflow-visible rounded-xl sm:rounded-3xl border border-slate-700/50 shadow-lg sm:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 bg-slate-800/50 backdrop-blur-sm">
+          <div className="w-full">
             <TravelMap onLocationClick={onLocationClick} />
           </div>
         </div>
