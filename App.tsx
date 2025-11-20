@@ -5,10 +5,12 @@ import { Hero } from "./components/Hero";
 import { IntroSection } from "./components/IntroSection";
 import { BlogSection } from "./components/BlogSection";
 import { MapSection } from "./components/MapSection";
+import { DinosaurGame } from "./components/DinosaurGame";
 import { Compass } from "lucide-react";
 
 export default function App() {
   const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
+  const [isDinosaurGameOpen, setIsDinosaurGameOpen] = useState(false);
   const blogSectionRef = useRef<HTMLDivElement>(null);
 
   const selectedPost = selectedPostId 
@@ -90,6 +92,14 @@ export default function App() {
                     <h3 className="text-2xl font-bold text-white">
                       Fernweh & Fußspuren
                     </h3>
+                    {/* Secret dinosaur game button */}
+                    <button
+                      onClick={() => setIsDinosaurGameOpen(true)}
+                      className="ml-2 p-2 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/50 transform hover:scale-110 active:scale-95"
+                      title="Geheimes Spiel freigeschalten! 🦖"
+                    >
+                      🦖
+                    </button>
                   </div>
                   <p className="text-slate-300 text-lg">
                     Folgt uns auf unserem Weg durch die Welt
@@ -103,6 +113,9 @@ export default function App() {
           </>
         )}
       </main>
+      
+      {/* Dinosaur Game Modal */}
+      <DinosaurGame isOpen={isDinosaurGameOpen} onClose={() => setIsDinosaurGameOpen(false)} />
     </div>
   );
 }
