@@ -8,7 +8,7 @@ interface BlogSectionProps {
 
 export function BlogSection({ posts, onPostClick }: BlogSectionProps) {
   return (
-    <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-16 sm:py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-12 sm:py-20 md:py-32 overflow-hidden">
       {/* Premium animated background - Mobile optimized */}
       <div className="absolute top-0 left-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-amber-500/10 blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse" />
       <div className="absolute bottom-0 right-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-orange-500/10 blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse" style={{ animationDelay: '1s' }} />
@@ -19,7 +19,7 @@ export function BlogSection({ posts, onPostClick }: BlogSectionProps) {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         {/* Premium Section Header - Mobile optimized */}
-        <div className="mb-12 sm:mb-16 md:mb-20 space-y-4 sm:space-y-6 text-center">
+        <div className="mb-8 sm:mb-12 md:mb-16 space-y-4 sm:space-y-6 text-center">
           <div className="flex items-center justify-center gap-3 sm:gap-4">
             <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-amber-500" />
             <span className="text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] text-amber-400 font-light">

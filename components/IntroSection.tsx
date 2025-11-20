@@ -1,6 +1,6 @@
 export function IntroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 py-16 sm:py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 py-12 sm:py-20 md:py-32 overflow-hidden">
       {/* Premium background effects - Mobile optimized */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-amber-500/10 blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse" />
@@ -10,7 +10,7 @@ export function IntroSection() {
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:40px_40px] sm:bg-[size:80px_80px] opacity-20 pointer-events-none" />
       
-      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
         {/* Premium Main Intro - Mobile optimized */}
         <div className="space-y-6 sm:space-y-8 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight drop-shadow-2xl">

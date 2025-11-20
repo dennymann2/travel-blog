@@ -52,7 +52,7 @@ export default function App() {
       <main>
         {selectedPost ? (
           <div className="bg-gradient-to-b from-slate-900 to-slate-800 min-h-screen">
-            <div className="mx-auto max-w-4xl px-4 py-6 sm:py-8 md:py-12 lg:px-8">
+            <div className="mx-auto max-w-4xl px-4 py-4 sm:py-6 md:py-10 lg:px-8">
               <BlogPost 
                 post={selectedPost} 
                 onBack={() => setSelectedPostId(null)} 

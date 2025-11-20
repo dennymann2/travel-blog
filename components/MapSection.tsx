@@ -7,7 +7,7 @@ interface MapSectionProps {
 
 export function MapSection({ onLocationClick }: MapSectionProps) {
   return (
-    <section className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 py-16 sm:py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 py-12 sm:py-20 md:py-32 overflow-hidden">
       {/* Premium background effects - Mobile optimized */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 right-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-blue-500/10 blur-3xl translate-x-1/3 animate-pulse" />
@@ -19,7 +19,7 @@ export function MapSection({ onLocationClick }: MapSectionProps) {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Premium Section Header - Mobile optimized */}
-        <div className="mb-12 sm:mb-16 space-y-4 sm:space-y-6">
+        <div className="mb-8 sm:mb-12 space-y-4 sm:space-y-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-4">
             <div className="flex h-12 sm:h-14 w-12 sm:w-14 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300 flex-shrink-0">
               <Globe className="h-6 sm:h-7 w-6 sm:w-7 text-white" />
