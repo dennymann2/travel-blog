@@ -1,164 +1,124 @@
-# 🌍 Fernweh & Fussspuren - Reiseblog
+# Fernweh & Fußspuren — Travel Blog
 
-A beautiful, modern travel blog website built with React, TypeScript, and Tailwind CSS.
+> **Portfolio demo project by Denny Rezvanov.**  
+> This website is a showcase piece built to demonstrate my frontend development capabilities to potential clients. It is not a real travel blog — the content is fictional and exists purely for demonstration purposes.
 
-## 📖 About
+---
 
-Follow Lena and Max on their incredible journey around the world. This blog documents their adventures across 4 continents with stunning stories, interactive maps, and beautiful photography.
+## Overview
 
-## ✨ Features
+A fully responsive, single-page travel blog application featuring immersive scroll animations, an interactive world map, and a polished dark-mode design. The site showcases five fictional travel destinations with rich editorial content, image galleries, and embedded video support.
 
-- 🎨 **Modern Design** - Beautiful hero section with animated gradients
-- 📱 **Fully Responsive** - Works perfectly on all devices
-- 🗺️ **Interactive Map** - Leaflet-based map showing all travel locations
-- 📝 **Blog Posts** - Beautifully formatted travel stories in German
-- 📸 **Image Gallery** - Optimized images with fallback support
-- ⚡ **Fast Performance** - Built with Vite for lightning-fast load times
-- 🎯 **Smooth Scrolling** - Elegant scroll indicators and animations
+**Live preview:** [fernweh-fussspuren.vercel.app](https://fernweh-fussspuren.vercel.app/)
 
-## 🛠️ Tech Stack
+---
 
-- **Frontend:** React 18 + TypeScript
-- **Styling:** Tailwind CSS 3
-- **Build Tool:** Vite 4
-- **Maps:** Leaflet + OpenStreetMap
-- **Icons:** Lucide React
-- **Hosting Ready:** Vercel, Netlify, GitHub Pages
+## Features
 
-## 🚀 Quick Start
+| Feature | Description |
+|---|---|
+| **Animated Hero** | Full-viewport landing section with layered gradient orbs, staggered entrance animations, and a floating scroll indicator |
+| **Scroll Reveal** | Content sections animate into view on scroll using Framer Motion's `useInView` with staggered timing |
+| **Page Transitions** | `AnimatePresence` handles smooth crossfade transitions between the home feed and individual blog posts |
+| **Interactive Map** | Leaflet map with dark CARTO tiles, custom amber markers, dashed route lines, and clickable legend |
+| **Blog Post Detail** | Long-form reading view with serif display typography, blockquote styling, image galleries, and video embeds |
+| **Glassmorphism UI** | Frosted-glass cards and header bar using `backdrop-blur` with subtle border highlights |
+| **Responsive Design** | Fully optimized for mobile, tablet, and desktop — touch targets, adaptive font sizing, and fluid grid layouts |
+| **Easter Egg** | Hidden dinosaur game accessible via the footer 🦖 |
 
-### Development
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Framework** | React 18 |
+| **Language** | TypeScript 5 |
+| **Styling** | Tailwind CSS 3 |
+| **Animations** | Framer Motion |
+| **Maps** | Leaflet + CARTO dark tiles |
+| **Icons** | Lucide React |
+| **Build Tool** | Vite 7 |
+| **Minification** | Terser |
+| **Deployment** | Netlify / Vercel |
+
+---
+
+## Project Structure
+
+```
+├── App.tsx                  # Root layout, routing, footer
+├── main.tsx                 # React entry point
+├── index.html               # HTML shell + meta / OG tags
+│
+├── components/
+│   ├── Hero.tsx             # Full-screen animated landing
+│   ├── IntroSection.tsx     # About section with scroll reveals
+│   ├── BlogSection.tsx      # Blog grid with staggered card reveals
+│   ├── BlogCard.tsx         # Individual post card component
+│   ├── BlogPost.tsx         # Full blog post detail view
+│   ├── MapSection.tsx       # Map section wrapper
+│   ├── TravelMap.tsx        # Leaflet map with markers + legend
+│   ├── DinosaurGame.tsx     # Easter egg modal (iframe game)
+│   ├── ImageWithFallback.tsx# Image component with error state
+│   └── ui/                  # Reusable UI primitives (shadcn/ui)
+│
+├── data/
+│   └── blog-posts.ts        # All blog post content (5 destinations)
+│
+├── types/
+│   └── blog.ts              # TypeScript interfaces
+│
+├── styles/
+│   └── globals.css          # Design tokens, animations, utilities
+│
+├── public/
+│   ├── images/              # Cover photos + galleries per destination
+│   └── videos/              # Video content per destination
+│
+├── tailwind.config.js       # Extended theme (fonts, colors, keyframes)
+├── vite.config.ts           # Vite config with code-splitting
+├── tsconfig.json            # TypeScript config
+└── netlify.toml             # Deployment config
+```
+
+---
+
+## Getting Started
+
 ```bash
 # Install dependencies
 npm install
 
-# Start dev server with hot reload
+# Start dev server (default: http://localhost:5173)
 npm run dev
 
-# Open browser to http://localhost:5173
-```
-
-### Production
-```bash
 # Build for production
 npm run build
 
-# Preview production build
+# Preview production build locally
 npm run preview
-
-# Deploy (see DEPLOYMENT.md)
 ```
-
-## 📁 Project Structure
-
-```
-├── components/          # React components
-│   ├── Hero.tsx        # Beautiful hero section
-│   ├── IntroSection.tsx # Travel story introduction
-│   ├── BlogSection.tsx  # Blog posts grid
-│   ├── BlogCard.tsx     # Individual blog card
-│   ├── BlogPost.tsx     # Full blog post reader
-│   ├── TravelMap.tsx    # Interactive map
-│   ├── MapSection.tsx   # Map section wrapper
-│   └── ui/             # Reusable UI components
-├── data/
-│   └── blog-posts.ts   # Blog content and metadata
-├── styles/
-│   └── globals.css     # Global styles & Tailwind
-├── types/
-│   └── blog.ts         # TypeScript types
-├── public/
-│   └── images/         # Static images
-├── App.tsx             # Main app component
-├── main.tsx            # Entry point
-└── vite.config.ts      # Vite configuration
-```
-
-## 📝 Blog Posts
-
-The website currently features 4 travel destinations:
-
-1. **Shanghai** (Day 1) - "Wo Tradition auf Zukunft trifft"
-2. **Beijing** (Day 18) - "Die Chinesische Mauer"
-3. **Rio de Janeiro** (Day 42) - "Wo die Berge ins Meer fallen"
-4. **Sydney** (Day 65) - "Die Stadt unter dem Südkreuz"
-
-Each post includes:
-- Engaging German storytelling
-- Beautiful images
-- GPS coordinates
-- Personal reflections
-- Relevant tags
-
-## 🗺️ Interactive Map
-
-The website features an interactive map showing all travel locations with:
-- Numbered markers for each destination
-- Clickable route line connecting destinations
-- Map legend with all locations
-- One-click navigation to blog posts
-
-## 📱 Responsive Design
-
-- Mobile-first approach
-- Optimized for all screen sizes
-- Touch-friendly interface
-- Fast load times on all devices
-
-## 🌐 Deployment
-
-Ready to go live? See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions on deploying to:
-- ✅ Vercel (Recommended)
-- ✅ Netlify
-- ✅ GitHub Pages
-
-## 🔧 Customization
-
-### Add a New Blog Post
-
-1. Edit `data/blog-posts.ts`:
-```typescript
-{
-  id: "unique-id",
-  title: "Ort Name",
-  subtitle: "Tag X – Beschreibung",
-  location: "Stadt, Land",
-  date: "DD. Monat YYYY",
-  day: 100,
-  image: "/images/image.jpg",
-  coordinates: [latitude, longitude],
-  content: ["Paragraph 1", "Paragraph 2", ...],
-  quote: "Inspirational quote",
-  reflection: "Personal thoughts",
-  tags: ["Tag1", "Tag2"]
-}
-```
-
-2. Images should be placed in `public/images/`
-3. The map will automatically update with the new location
-
-### Change Colors
-
-Edit `tailwind.config.js` to change the color scheme or modify Tailwind classes in components.
-
-### Update Content
-
-- Hero section: `components/Hero.tsx`
-- Intro section: `components/IntroSection.tsx`
-- Footer: `App.tsx`
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 👥 Authors
-
-**Lena & Max** - Travel bloggers documenting their world adventures
 
 ---
 
-## 🎉 Ready to Deploy?
+## Performance
 
-Your site is production-ready! Follow the [DEPLOYMENT.md](./DEPLOYMENT.md) guide to get it online in minutes.
+- **Code splitting** — Vendor chunks for React, Three.js, and Leaflet via Rollup manual chunks
+- **Lazy loading** — All gallery and below-fold images use `loading="lazy"`
+- **Hardware acceleration** — Animations use `transform` and `opacity` for GPU compositing
+- **Reduced motion** — Respects `prefers-reduced-motion` media query
+- **Optimized fonts** — Google Fonts loaded with `display=swap` to prevent render blocking
 
-**Enjoy your travels! ✈️🌍**
+---
+
+## Deployment
+
+The project includes configs for both **Netlify** (`netlify.toml`) and **Vercel** (zero-config). Push to `main` and either platform will auto-build and deploy.
+
+---
+
+## Contact
+
+**Denny Rezvanov**  
+This is a portfolio demo — if you're interested in working together, feel free to reach out.
