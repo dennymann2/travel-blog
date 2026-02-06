@@ -1,5 +1,7 @@
 import { BlogPost } from "../types/blog";
 import { BlogCard } from "./BlogCard";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface BlogSectionProps {
   posts: BlogPost[];
@@ -7,50 +9,57 @@ interface BlogSectionProps {
 }
 
 export function BlogSection({ posts, onPostClick }: BlogSectionProps) {
+  const headerRef = useRef(null);
+  const headerInView = useInView(headerRef, { once: true, margin: "-60px" });
+
   return (
-    <section className="relative bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 py-12 sm:py-20 md:py-32 overflow-hidden">
-      {/* Premium animated background - Mobile optimized */}
-      <div className="absolute top-0 left-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-amber-500/10 blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse" />
-      <div className="absolute bottom-0 right-0 h-64 sm:h-96 w-64 sm:w-96 rounded-full bg-orange-500/10 blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/2 h-48 sm:h-64 w-48 sm:w-64 rounded-full bg-blue-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+    <section className="relative bg-slate-950 py-20 sm:py-28 md:py-36 overflow-hidden noise-overlay">
+      {/* Background effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 h-[500px] w-[500px] rounded-full bg-amber-500/[0.05] blur-[120px] -translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-orange-500/[0.05] blur-[120px] translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] rounded-full bg-blue-500/[0.03] blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:32px_32px]" />
+      </div>
 
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:40px_40px] sm:bg-[size:80px_80px] opacity-20 pointer-events-none" />
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        {/* Premium Section Header - Mobile optimized */}
-        <div className="mb-8 sm:mb-12 md:mb-16 space-y-4 sm:space-y-6 text-center">
-          <div className="flex items-center justify-center gap-3 sm:gap-4">
-            <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-amber-500" />
-            <span className="text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] text-amber-400 font-light">
-              ✨ Unsere Geschichten
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        {/* Section Header */}
+        <motion.div
+          ref={headerRef}
+          initial={{ opacity: 0, y: 40 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mb-12 sm:mb-16 md:mb-20 space-y-5 sm:space-y-6"
+        >
+          <div className="flex items-center gap-4">
+            <div className="h-px flex-1 max-w-12 bg-gradient-to-r from-transparent to-amber-500/50" />
+            <span className="text-xs uppercase tracking-[0.25em] text-amber-400/80 font-medium">
+              Unsere Geschichten
             </span>
-            <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-amber-500" />
+            <div className="h-px flex-1 max-w-12 bg-gradient-to-l from-transparent to-amber-500/50" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight drop-shadow-2xl">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
             Reiseberichte aus der <br className="hidden sm:block" />
-            <span className="bg-gradient-to-r from-amber-300 via-orange-400 to-red-500 bg-clip-text text-transparent">
-              ganzen Welt
-            </span>
+            <span className="gradient-text">ganzen Welt</span>
           </h2>
 
-          <p className="mx-auto max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 font-light leading-relaxed">
+          <p className="mx-auto max-w-3xl text-sm sm:text-base md:text-lg text-slate-400 font-light leading-relaxed">
             Jeder Ort erzählt eine einzigartige Geschichte. Von den leuchtenden
             Lichtern der Metropolen bis zu den unerwarteten Momenten zwischendurch
             – hier dokumentieren wir unsere Reise voller Abenteuer und Entdeckungen.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Blog Grid - Premium layout - Mobile responsive */}
-        <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max w-full">
+        {/* Blog Grid */}
+        <div className="grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max w-full">
           {posts.map((post, index) => (
-            <div key={post.id} className="animate-slide-up w-full" style={{ animationDelay: `${index * 100}ms` }}>
-              <BlogCard
-                post={post}
-                onClick={() => onPostClick(post.id)}
-              />
-            </div>
+            <BlogCard
+              key={post.id}
+              post={post}
+              onClick={() => onPostClick(post.id)}
+              index={index}
+            />
           ))}
         </div>
       </div>

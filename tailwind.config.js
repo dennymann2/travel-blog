@@ -18,6 +18,9 @@ export default {
     },
     extend: {
       fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
         bebas: ['"Bebas Neue"', '"Bebas Neue Charges"', 'sans-serif'],
       },
       colors: {

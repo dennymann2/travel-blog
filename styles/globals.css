@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Playfair+Display:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Performance: Hardware acceleration and font smoothing */
+/* ─── Performance & Global Smoothing ─── */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -17,9 +17,10 @@ html {
 
 body {
   overflow-x: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Reduce motion for accessibility */
+/* ─── Accessibility ─── */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -30,6 +31,7 @@ body {
 
 @custom-variant dark (&:is(.dark *));
 
+/* ─── Design Tokens ─── */
 :root {
   --font-size: 16px;
   --background: #ffffff;
@@ -153,64 +155,22 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
-
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/**
- * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
- */
+/* ─── Typography Base ─── */
 @layer base {
   :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
-    :is(h1) {
-      font-size: var(--text-2xl);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    :is(h2) {
-      font-size: var(--text-xl);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    :is(h3) {
-      font-size: var(--text-lg);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    :is(h4) {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    :is(p) {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-normal);
-      line-height: 1.5;
-    }
-
-    :is(label) {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    :is(button) {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    :is(input) {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-normal);
-      line-height: 1.5;
-    }
+    :is(h1) { font-size: var(--text-2xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
+    :is(h2) { font-size: var(--text-xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
+    :is(h3) { font-size: var(--text-lg); font-weight: var(--font-weight-medium); line-height: 1.5; }
+    :is(h4) { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+    :is(p) { font-size: var(--text-base); font-weight: var(--font-weight-normal); line-height: 1.5; }
+    :is(label) { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+    :is(button) { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+    :is(input) { font-size: var(--text-base); font-weight: var(--font-weight-normal); line-height: 1.5; }
   }
 }
 
@@ -219,169 +179,155 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Beautiful animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ─── Serif Display Font ─── */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* ─── Premium Noise Texture Overlay ─── */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* Premium animations */
+/* ─── Animations ─── */
 @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes glow-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 50px rgba(245, 158, 11, 0.6);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(48px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.2); }
+  50% { box-shadow: 0 0 60px rgba(245, 158, 11, 0.5); }
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
-.animate-glow-pulse {
-  animation: glow-pulse 2s ease-in-out infinite;
+.animate-fade-in { animation: fade-in 0.8s ease-out forwards; }
+.animate-slide-up { animation: slide-up 0.8s ease-out forwards; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
-.animate-slide-up {
-  animation: slide-up 0.8s ease-out forwards;
+/* ─── Glassmorphism Utility ─── */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Premium text styling */
-.text-premium-lg {
-  @apply text-6xl md:text-8xl font-black tracking-tighter drop-shadow-2xl;
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.text-premium-md {
-  @apply text-3xl md:text-5xl font-bold tracking-wide drop-shadow-lg;
+/* ─── Premium Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Glass morphism effect */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.5rem;
+.gradient-text-cool {
+  background: linear-gradient(135deg, #67e8f9, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Smooth transitions */
-a {
-  transition: color 0.2s ease;
-}
+/* ─── Smooth Link & Button Transitions ─── */
+a { transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+button { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
 
-button {
-  transition: all 0.2s ease;
-}
-
-/* Responsive text sizing optimization */
+/* ─── Responsive Font Sizing ─── */
 @media (max-width: 640px) {
-  html {
-    font-size: 14px;
-  }
+  html { font-size: 14px; }
 }
-
 @media (min-width: 641px) and (max-width: 1024px) {
-  html {
-    font-size: 15px;
-  }
+  html { font-size: 15px; }
 }
-
 @media (min-width: 1025px) {
-  html {
-    font-size: 16px;
-  }
+  html { font-size: 16px; }
 }
 
-/* Touch targets optimization for mobile */
+/* ─── Touch Target Optimization ─── */
 @media (max-width: 640px) {
-  button,
-  a,
-  [role='button'] {
+  button, a, [role='button'] {
     min-height: 44px;
     min-width: 44px;
   }
 }
 
-/* Image optimization for performance */
+/* ─── Image Optimization ─── */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Optimize animations for mobile devices */
-@media (max-width: 768px) {
-  * {
-    animation-duration: 0.3s !important;
-  }
+/* ─── Scroll Padding for Fixed Headers ─── */
+@media (max-width: 640px) {
+  html { scroll-padding-top: 60px; }
 }
 
-/* Prevent layout shift on mobile */
-@media (max-width: 640px) {
-  html {
-    scroll-padding-top: 60px;
-  }
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ─── Selection Color ─── */
+::selection {
+  background: rgba(245, 158, 11, 0.3);
+  color: white;
 }
